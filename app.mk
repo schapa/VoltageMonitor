@@ -5,6 +5,9 @@ CFLAGS += \
 	-I./lib/ \
 	
 CFLAGS += \
+	-fdata-sections \
+	-ffunction-sections \
+	\
 	-DDEBUG \
 	-DSTM32F030 \
 	-DHSE_VALUE=8000000 \

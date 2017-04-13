@@ -38,6 +38,8 @@ CFLAGS += \
 	-mthumb -mabi=aapcs \
 	-mfloat-abi=soft \
 	-fabi-version=0 \
+	-fdata-sections \
+	-ffunction-sections \
 
 CXXFLAGS += \
 	-fno-exceptions \
@@ -50,8 +52,6 @@ LDFLAGS += \
 	-mthumb \
 	-fmessage-length=0 \
 	-fsigned-char \
-	-ffunction-sections \
-	-fdata-sections \
 	-ffreestanding \
 	-fno-move-loop-invariants \
 	-Wall \
