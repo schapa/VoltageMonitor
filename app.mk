@@ -12,7 +12,6 @@ CFLAGS += \
 	-DSTM32F030 \
 	-DHSE_VALUE=8000000 \
 	-DUSE_STDPERIPH_DRIVER \
-	-DUSE_FULL_ASSERT \
 	\
 	-I./sdk/include/ \
 	-I./sdk/include/arm \
@@ -28,7 +27,11 @@ export SRC := \
 	\
 	./sdk/src/stm32f0-stdperiph/stm32f0xx_rcc.c \
 	./sdk/src/stm32f0-stdperiph/stm32f0xx_gpio.c \
+	./sdk/src/stm32f0-stdperiph/stm32f0xx_exti.c \
+	./sdk/src/stm32f0-stdperiph/stm32f0xx_syscfg.c \
 	./sdk/src/stm32f0-stdperiph/stm32f0xx_adc.c \
 	./sdk/src/stm32f0-stdperiph/stm32f0xx_iwdg.c \
 	./sdk/src/stm32f0-stdperiph/stm32f0xx_misc.c \
+	./sdk/src/stm32f0-stdperiph/stm32f0xx_tim.c \
+	./sdk/src/stm32f0-stdperiph/stm32f0xx_dbgmcu.c \
 

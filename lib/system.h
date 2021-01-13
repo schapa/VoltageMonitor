@@ -11,11 +11,14 @@
 extern "C" {
 #endif
 
-/* locks isr. Critical section entry. return isr state before call */
-int System_Lock(void);
+///* locks isr. Critical section entry. return isr state before call */
+//int System_Lock(void);
+//
+///* Unlocks isr. Critical section exit. accept isr state before crit section entry */
+//void System_Unlock(int primask);
 
-/* Unlocks isr. Critical section exit. accept isr state before crit section entry */
-void System_Unlock(int primask);
+#define System_Lock(...) 1
+#define System_Unlock(primask) (void)primask
 
 /* Wait for interrupt/event */
 void System_Poll(void);

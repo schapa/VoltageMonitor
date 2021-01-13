@@ -8,9 +8,9 @@ include common-defs.mk
 
 include app.mk
 
-.PHONY: all firmware clean
+.PHONY: all firmware clean flash
 
-all: config firmware
+all: config firmware 
 
 config:
 	@echo "=== Build config =================="
@@ -19,6 +19,9 @@ config:
 
 firmware:
 	$(MAKE) -f firmware.mk
+	
+flash: firmware
+	openocd -f interface/stlink.cfg -f target/stm32f0x.cfg -c init -c targets -c 'reset halt' -c 'flash write_image erase build/fw-LeadAcid.hex' -c 'reset halt' -c 'verify_image build/fw-LeadAcid.hex' -c 'reset run' -c shutdown
 
 
 clean::

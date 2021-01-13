@@ -18,10 +18,22 @@ extern "C" {
 #define MINUTE_TICKS (BSP_TICKS_PER_SECOND*60)
 
 typedef enum {
-	BSP_Pin_PowerKey,
+
+    BSP_Pin_UART_TX,
+    BSP_Pin_UART_RX,
+
+	BSP_Pin_PowerButton,
+
 	BSP_Pin_BatteryKey,
 	BSP_Pin_SolarKey,
-	BSP_Pin_Adc,
+
+	BSP_Pin_Adc_Vsolar,
+    BSP_Pin_Adc_Vbattery,
+
+    BSP_Pin_LED_Red,
+    BSP_Pin_LED_Green,
+
+    BSP_Pin_VBATT,
 
 	BSP_Pin_Last,
 } BSP_Pin_t;
@@ -29,6 +41,8 @@ typedef enum {
 
 _Bool BSP_Init(void);
 void BSP_InitGpio(void);
+
+void BSP_ShowCharge(unsigned percent);
 
 void BSP_FeedWatchdog(void);
 

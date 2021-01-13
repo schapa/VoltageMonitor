@@ -180,7 +180,8 @@ void Timer_onTimerCb(uint32_t id) {
 			if (s_timers.timer[i].cb) {
 				System_Unlock(primask);
 				s_timers.timer[i].cb(id, s_timers.timer[i].cbData);
-				System_Lock();
+				int rv = System_Lock();
+				(void)rv;
 			}
 			s_timers.timer[i].flags &= ~IS_IN_CALLBACK;
 			if (!(s_timers.timer[i].flags & (IS_ACTIVE | IS_PERIODIC))) { // not rearmed

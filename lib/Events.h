@@ -17,6 +17,7 @@ typedef enum {
 	EVENT_SYSTICK,
 	EVENT_TIMCALL,
 	EVENT_ADC,
+    EVENT_BUTTON,
 	EVENT_LAST
 } EventTypes_e;
 
